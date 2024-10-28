@@ -1,6 +1,6 @@
-export default function ButtonDefault({title}){
+export default function ButtonDefault({title,onClick}){
     return<>
-        <button className="mt-5 tracking-wide font-semibold bg-blue-900 text-gray-100 w-full py-4 rounded-lg hover:bg-indigo-700 transition-all duration-300 ease-in-out flex items-center justify-center focus:shadow-outline focus:outline-none">
+        <button onClick={onClick} className="mt-5 tracking-wide font-semibold bg-blue-900 text-gray-100 w-full py-4 rounded-lg hover:bg-indigo-700 transition-all duration-300 ease-in-out flex items-center justify-center focus:shadow-outline focus:outline-none">
                   <svg
                     className="w-6 h-6 -ml-2"
                     fill="none"

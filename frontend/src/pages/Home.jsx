@@ -1,56 +1,51 @@
-import Navbar from "../components/NavBar";
+// Home.js
+import * as React from "react";
+import { Navigation } from "../components/Navigation";
+import { StudentInfo } from "../components/StudentInfo";
+import { TeachersList } from "../components/TeachersList";
+import Sidebar from "../components/Sidebar";
 
-const Home = ()=>{
-    return(
-        <>
-            <Navbar></Navbar>
-            <div className='flex flex-row h-[82vh] px-4 py-4 bg-purple-50'>
-
-            {/* First Div - 40% width */}
-            <div className='w-3/5 flex items-center justify-center'>
-                <img className=" h-[400px] rounded-xl shadow-xl shadow-gray-500/50" src="https://img.freepik.com/free-photo/portrait-young-boy_23-2150773172.jpg?t=st=1727948338~exp=1727951938~hmac=b7acf60080fd826fc12842ff18f58fe43c49d45174c031fea1b40c5e150de555&w=1380" alt="child photo"/>
-            </div>
-
-            {/* Second Div - 60% width */}
-            <div className="w-2/5 p-4 bg-gray-100 rounded-lg shadow-lg h-70vh flex flex-col justify-center">
-            {/* Greeting Section */}
-            <div className="mb-6 text-[40px] font-semibold text-gray-700">
-                <p>Hello,</p>
-                <p>Welcome Back</p>
-            </div>
-
-            {/* Input Field */}
-            <div className="mb-6">
-                <input
-                onChange={(e) => setRollno(e.target.value)}
-                type="text"
-                placeholder="Enter Student's Rollno"
-                className="border-2 border-gray-300 p-2 w-full focus:border-blue-500 focus:outline-none rounded-xl"
-                />
-            </div>
-
-            
-            {/* Buttons */}
-            <div className="flex space-x-4">
+const Home = () => {
+  return (
+    <main className="overflow-hidden pr-20 bg-slate-300 max-md:pr-5">
+      <div className="flex gap-5 max-md:flex-col">
+        <aside className="flex flex-col w-[31%] max-md:ml-0 max-md:w-full">
+          <div className="flex flex-col grow items-start w-full text-center text-black bg-slate-300">
+            <Sidebar/>
+          </div>
+        </aside>
+        
+        <section className="flex flex-col ml-5 w-[69%] max-md:ml-0 max-md:w-full">
+          <div className="flex flex-col self-stretch my-auto w-full max-md:mt-10 max-md:max-w-full">
+            <div className="max-md:max-w-full">
+              <div className="flex gap-5 max-md:flex-col">
+                <div className="flex flex-col w-[73%] max-md:ml-0 max-md:w-full">
+                  <div className="flex flex-col grow leading-none max-md:mt-10 max-md:max-w-full">
+                    <h1 className="self-start text-8xl text-fuchsia-700 max-md:max-w-full max-md:text-4xl">
+                      Welcome,
+                    </h1>
+                    <StudentInfo />
+                  </div>
+                </div>
                 
-                <button
-                className="bg-blue-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-lg h-16 w-full"
-                
-                >
-                Progress
-                </button>
-                
-                <button
-                className="bg-red-500 hover:bg-orange-700 text-white font-bold py-2 px-4 rounded-lg h-16 w-full"
-                
-                >
-                Edit
-                </button>
+                <div className="flex flex-col ml-5 w-[27%] max-md:ml-0 max-md:w-full">
+                  <div className="flex flex-col justify-center p-9 mt-28 w-full bg-violet-300 rounded-[53px] max-md:px-5 max-md:mt-10">
+                    <img 
+                      loading="lazy" 
+                      src="https://cdn.builder.io/api/v1/image/assets/TEMP/a16061bcd4e76bf0ccc78a636d7066db9409ac97ff68d0dc29b0f67c24ed7d06?placeholderIfAbsent=true&apiKey=23f4468dc3a042f09b7fc5956a477b5a" 
+                      alt="Student profile picture"
+                      className="object-contain aspect-[0.74] rounded-[36px] w-[165px]" 
+                    />
+                  </div>
+                </div>
+              </div>
             </div>
-            </div>
+              
+          </div>
+        </section>
+      </div>
+    </main>
+  );
+};
 
-        </div>
-        </>
-    )
-}
 export default Home;
